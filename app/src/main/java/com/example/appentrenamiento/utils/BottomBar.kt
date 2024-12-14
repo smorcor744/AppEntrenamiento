@@ -15,9 +15,9 @@ import androidx.navigation.NavHostController
 import com.example.appentrenamiento.ui.theme.Naranja
 
 @Composable
-fun BottomBar(navController: NavHostController){
+fun BottomBar(navController: NavHostController,modifier: Modifier){
     Row(
-        modifier = Modifier
+        modifier = modifier
             .background(color = Naranja)
             .fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,

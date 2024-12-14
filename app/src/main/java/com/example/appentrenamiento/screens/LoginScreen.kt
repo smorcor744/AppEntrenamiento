@@ -1,6 +1,7 @@
 package com.example.appentrenamiento.screens
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -89,6 +90,9 @@ fun LoginScreen(navController: NavHostController,viewModel: ViewModel) {
                 style = MaterialTheme.typography.labelLarge, // Estilo de texto grande
                 modifier = Modifier
                     .fillMaxWidth(0.8f)
+                    .clickable {
+                        navController.navigate("menu")
+                    }
                     .padding( top = 10.dp),
                 fontSize = 15.sp // Tamaño de fuente de 15dp
             )

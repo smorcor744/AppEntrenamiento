@@ -23,10 +23,10 @@ import com.example.appentrenamiento.R
 import com.example.appentrenamiento.ui.theme.Naranja
 
 @Composable
-fun Header(navController: NavHostController) {
+fun Header(navController: NavHostController,modifier: Modifier) {
     // Barra superior con logo, menú y opciones de navegación
     Row(
-        modifier = Modifier
+        modifier = modifier
             .background(color = Naranja)
             .fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically

@@ -21,13 +21,13 @@ import com.example.appentrenamiento.utils.Header
 import com.example.appentrenamiento.utils.MenuOption
 
 @Composable
-fun MainMenu(navController: NavHostController) {
+fun MainMenu(navController: NavHostController, modifier: Modifier) {
     Scaffold(
         topBar = {
-            Header(navController)
+            Header(navController,modifier)
         },
         bottomBar = {
-            BottomBar(navController)
+            BottomBar(navController,modifier)
         }
     ) { innerPadding ->
         LazyColumn(
