@@ -11,14 +11,15 @@ import androidx.compose.ui.unit.dp
 import com.example.appentrenamiento.ui.theme.White
 
 @Composable
-fun ClickableIcon(nombre: String, imageVector: ImageVector,onClick: () -> Unit) {
+fun ClickableIcon(nombre: String, imageVector: ImageVector, onClick: () -> Unit) {
+    // Composable que muestra un icono que es clickeable
     Icon(
-        imageVector = imageVector,
-        contentDescription = nombre,
-        tint = White,
+        imageVector = imageVector, // El vector de imagen que representa el icono
+        contentDescription = nombre, // Descripción del icono para accesibilidad
+        tint = White, // Color del icono, en este caso blanco
         modifier = Modifier
-            .size(48.dp)
-            .padding(5.dp)
-            .clickable { onClick() } // Acción al hacer clic
+            .size(48.dp) // Tamaño del icono
+            .padding(5.dp) // Espaciado alrededor del icono
+            .clickable { onClick() } // Acción que se ejecuta al hacer clic en el icono
     )
 }

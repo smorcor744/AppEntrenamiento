@@ -23,52 +23,55 @@ import com.example.appentrenamiento.R
 import com.example.appentrenamiento.ui.theme.Naranja
 
 @Composable
-fun Header(navController: NavHostController,modifier: Modifier) {
+fun Header(navController: NavHostController, modifier: Modifier) {
     // Barra superior con logo, menú y opciones de navegación
     Row(
         modifier = modifier
-            .background(color = Naranja)
-            .fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically
+            .background(color = Naranja) // Fondo naranja para la barra superior
+            .fillMaxWidth(), // La fila ocupa todo el ancho disponible
+        verticalAlignment = Alignment.CenterVertically // Alineación vertical al centro
     ) {
         // Logo de la aplicación
         Image(
-            painter = painterResource(id = R.drawable.img),
-            contentDescription = "Logo",
+            painter = painterResource(id = R.drawable.img), // Carga la imagen del logo
+            contentDescription = "Logo", // Descripción del logo para accesibilidad
             modifier = Modifier
-                .height(80.dp)
-                .wrapContentHeight()
+                .height(80.dp) // Establece la altura del logo
+                .wrapContentHeight() // El logo se ajusta a su altura natural
         )
 
         // Barra de íconos a la derecha con varias opciones
         Row(
             modifier = Modifier
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.End
+                .fillMaxWidth(), // Ocupa todo el ancho disponible
+            horizontalArrangement = Arrangement.End // Alinea los íconos al final (derecha)
         ) {
-            // Íconos para diferentes secciones
+            // Íconos para diferentes secciones de la aplicación, cada uno es clickeable
 
-            ClickableIcon(nombre = "Favoritos",imageVector = Icons.Filled.Star) {
-                navController.navigate("login")
+            // Ícono de favoritos
+            ClickableIcon(nombre = "Favoritos", imageVector = Icons.Filled.Star) {
+                navController.navigate("login") // Navega a la pantalla de login al hacer clic
             }
 
-            ClickableIcon(nombre = "Calendario",imageVector = Icons.Filled.DateRange) {
-                navController.navigate("login")
+            // Ícono de calendario
+            ClickableIcon(nombre = "Calendario", imageVector = Icons.Filled.DateRange) {
+                navController.navigate("login") // Navega a la pantalla de login al hacer clic
             }
 
-            ClickableIcon(nombre = "Añadir Entrenamientos",imageVector = Icons.Filled.AddCircle) {
-                navController.navigate("login")
+            // Ícono para añadir entrenamientos
+            ClickableIcon(nombre = "Añadir Entrenamientos", imageVector = Icons.Filled.AddCircle) {
+                navController.navigate("login") // Navega a la pantalla de login al hacer clic
             }
 
-            ClickableIcon(nombre = "Sessions",imageVector = Icons.Filled.AccountBox) {
-                navController.navigate("login")
+            // Ícono de sesiones
+            ClickableIcon(nombre = "Sessions", imageVector = Icons.Filled.AccountBox) {
+                navController.navigate("login") // Navega a la pantalla de login al hacer clic
             }
 
-            ClickableIcon(nombre = "Menu",imageVector = Icons.Filled.Menu) {
-                navController.navigate("login")
+            // Ícono de menú
+            ClickableIcon(nombre = "Menu", imageVector = Icons.Filled.Menu) {
+                navController.navigate("login") // Navega a la pantalla de login al hacer clic
             }
-
         }
     }
-
 }

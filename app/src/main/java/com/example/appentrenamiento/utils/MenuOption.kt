@@ -24,35 +24,44 @@ import com.example.appentrenamiento.ui.theme.White
 
 @Composable
 fun MenuOption(icon: ImageVector, text: String, onClick: () -> Unit) {
+    // Box que actúa como contenedor para el ícono y el texto
     Box(
         modifier = Modifier
-            .fillMaxWidth(0.8f)
-            .padding(16.dp)
-            .clickable(onClick = onClick)
-            .background(
-                color = LightBlue,
-                shape = MaterialTheme.shapes.medium
+            .fillMaxWidth(0.8f) // El contenedor ocupa el 80% del ancho disponible
+            .padding(16.dp) // Padding alrededor del contenedor
+            .clickable(onClick = onClick) // Hace que el contenedor sea clickeable
+            .background( // Fondo con color y forma personalizada
+                color = LightBlue, // Color de fondo
+                shape = MaterialTheme.shapes.medium // Forma redondeada para el fondo
             )
-            .padding(vertical = 16.dp, horizontal = 24.dp),
-        contentAlignment = Alignment.Center
+            .padding(vertical = 16.dp, horizontal = 24.dp), // Padding interno
+        contentAlignment = Alignment.Center // Alineación central del contenido dentro del Box
     ) {
+        // Fila horizontal que contiene el ícono y el texto
         Row(
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center
+            verticalAlignment = Alignment.CenterVertically, // Alineación vertical centrada
+            horizontalArrangement = Arrangement.Center // Alineación horizontal centrada
         ) {
+            // Ícono a la izquierda
             Icon(
-                imageVector = icon,
-                contentDescription = text,
-                modifier = Modifier.size(32.dp).fillMaxWidth(0.1f),
-                tint = White
+                imageVector = icon, // El ícono que se pasa como parámetro
+                contentDescription = text, // Descripción del ícono para accesibilidad
+                modifier = Modifier
+                    .size(32.dp) // Tamaño del ícono
+                    .fillMaxWidth(0.1f), // El ícono ocupa el 10% del ancho disponible
+                tint = White // Color del ícono (blanco)
             )
+
+            // Espaciador entre el ícono y el texto
             Spacer(modifier = Modifier.width(8.dp))
+
+            // Texto a la derecha del ícono
             Text(
-                text = text,
-                color = White,
-                fontSize = 18.sp,
-                style = MaterialTheme.typography.bodyMedium,
-                modifier = Modifier.fillMaxWidth(0.9f)
+                text = text, // El texto que se pasa como parámetro
+                color = White, // Color del texto (blanco)
+                fontSize = 18.sp, // Tamaño de la fuente
+                style = MaterialTheme.typography.bodyMedium, // Estilo de texto
+                modifier = Modifier.fillMaxWidth(0.9f) // El texto ocupa el 90% del ancho disponible
             )
         }
     }
